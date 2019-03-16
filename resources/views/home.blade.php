@@ -14,9 +14,9 @@
                <h1 class="jumbotron-heading">DropBix</h1>
                <p class="lead text-muted">Sebuah website Indonesia yang mirip DropBox</p>
                <p>
-                  <a href="#" class="btn btn-primary">Daftar Disini</a>
-                  <a href="#" class="btn btn-secondary">Sudah Punya Akun? Login</a>
-               </p>
+                  <a href="{{ route('register') }}" class="btn btn-primary">Daftar Disini</a>
+
+			   </p>
             </div>
          </section>
       </div>

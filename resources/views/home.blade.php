@@ -2,7 +2,7 @@
 @extends('template')
 
 @section('content')
-
+	<body>
 	  <br>
 	  <br>
 	  <br>
@@ -20,10 +20,10 @@
             </div>
          </section>
       </div>
-   </body>
+   
 	  <br>
 	  <br>
 	  <br>
 	  <br>
-
+	</body>
 @endsection

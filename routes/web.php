@@ -12,6 +12,14 @@
 */
 
 Route::get('/', function () {
-	
 	return view('home');
-});
+})->name('home');
+
+
+Route::get('/upload', function () {
+	
+	return view('file.upload');
+})->name('upload');
+
+
+

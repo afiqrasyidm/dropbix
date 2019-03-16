@@ -13,4 +13,4 @@
                <li><a href="{{ route('login') }}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
             </ul>
          </div>
-      </nav>
+      </nav>  

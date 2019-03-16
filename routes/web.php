@@ -32,5 +32,17 @@ Route::get('/detail-file', function () {
 	return view('file.detail-file');
 })->name('detail-file');
 
+Route::get('/daftar', function () {
+	
+	return view('users.daftar');
+
+})->name('daftar');
+
+Route::get('/login', function () {
+	
+	return view('users.login');
+
+})->name('login');
+
 
 

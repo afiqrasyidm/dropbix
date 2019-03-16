@@ -9,8 +9,8 @@
 			   <li class="active"><a href="{{ route('list-file') }}">List File</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-               <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-               <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+               <li><a href="{{ route('daftar') }}"><span class="glyphicon glyphicon-user"></span> Daftar</a></li>
+               <li><a href="{{ route('login') }}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
             </ul>
          </div>
       </nav>

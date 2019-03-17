@@ -36,9 +36,5 @@ Route::get('/detail-file', function () {
 	return view('file.detail-file');
 })->name('detail-file');
 
-
-
-
-
 Auth::routes();
 

@@ -20,21 +20,30 @@ Route::get('/home', function () {
 })->name('home');
 
 
-Route::get('/upload', function () {
-	
-	return view('file.upload');
-})->name('upload');
 
 
-Route::get('/list-file', function () {
-	
-	return view('file.list-file');
-})->name('list-file');
 
-Route::get('/detail-file', function () {
-	
-	return view('file.detail-file');
-})->name('detail-file');
 
+Route::group(['middleware'=>'auth'], function() {
+		Route::get('/upload', function () {
+			return view('file.upload');
+		})->name('upload');
+
+		Route::post('upload', 'FileController@create')->name('upload');
+
+		Route::get('/list-file', function () {
+
+			return view('file.list-file');
+		})->name('list-file');
+
+		Route::get('/detail-file', function () {
+
+			return view('file.detail-file');
+		})->name('detail-file');
+
+
+
+});
+
+Route::get('/logout', 'Auth\LoginController@logout')->name('logout' );
 Auth::routes();
-

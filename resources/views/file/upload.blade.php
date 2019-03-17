@@ -32,7 +32,7 @@
 
 
 				<div class="file-upload-wrapper" data-text="Pilih File Kamu!">
-				  <input  type="file" name="file" class="file-upload-field" value="">
+				  <input type="file" name="file" class="file-upload-field" value="">
 				</div>
 
 			</div>

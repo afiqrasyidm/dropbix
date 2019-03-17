@@ -20,7 +20,7 @@ class FileController extends Controller
 					$move              =   $file->move($destinationPath, $name);
 					$url                = "{$name}";
 
-					$course =File::create([
+					File::create([
 							"user_id"    => Auth::user()->id,
 							"name"         => $request->nama_file,
 							"url"      => $url,
@@ -31,6 +31,13 @@ class FileController extends Controller
 			}
 		}
 
-		
+		public function get_list_file(){
+
+				$files = File::where('user_id', Auth::user()->id)
+									->where('is_active', 1)
+									->get();
+
+				return view('file.list-file', ["files"=>$files]);
+		}
 
 }

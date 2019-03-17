@@ -29,17 +29,11 @@ Route::group(['middleware'=>'auth'], function() {
 			return view('file.upload');
 		})->name('upload');
 
-		Route::post('upload', 'FileController@create')->name('upload');
+		Route::post('upload', 'FileController@create');
 
-		Route::get('/list-file', function () {
+		Route::get('/list-file', 'FileController@get_list_file')->name('list-file');
 
-			return view('file.list-file');
-		})->name('list-file');
-
-		Route::get('/detail-file', function () {
-
-			return view('file.detail-file');
-		})->name('detail-file');
+		Route::get('/list-file/{id}', 'FileController@get_file')->name('detail-file');
 
 
 

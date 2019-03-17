@@ -40,4 +40,14 @@ class FileController extends Controller
 				return view('file.list-file', ["files"=>$files]);
 		}
 
+		public function get_file($id_file){
+
+				$file = File::where('user_id', Auth::user()->id)
+									->where('is_active', 1)
+									->where('id', $id_file)
+									->first();
+
+				return view('file.detail-file', ["file"=>$file]);
+		}
+
 }

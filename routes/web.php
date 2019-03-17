@@ -33,8 +33,7 @@ Route::group(['middleware'=>'auth'], function() {
 
 		Route::get('/list-file', 'FileController@get_list_file')->name('list-file');
 
-		Route::get('/list-file/{id}', 'FileController@get_file')->name('detail-file');
-
+		Route::get('/detail-file/{id}', 'FileController@get_file')->name('detail-file');
 
 
 });

@@ -35,6 +35,8 @@ Route::group(['middleware'=>'auth'], function() {
 
 		Route::get('/detail-file/{id}', 'FileController@get_file')->name('detail-file');
 
+		Route::post('update', 'FileController@update')->name('update');
+
 
 });
 

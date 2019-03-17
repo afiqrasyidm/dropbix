@@ -46,8 +46,41 @@ class FileController extends Controller
 									->where('is_active', 1)
 									->where('id', $id_file)
 									->first();
-
+				if($file == NULL){
+					return abort(404);
+				}
 				return view('file.detail-file', ["file"=>$file]);
+		}
+		public function update(Request $request){
+
+			if($request->submit == "update"){
+
+				$file     = $request->file('file');
+				$url      = "";
+				if($file != null){
+						$destinationPath    = 'file/';
+						$name               = $file->getClientOriginalName();
+						$move              =   $file->move($destinationPath, $name);
+						$url                = "{$name}";
+
+				}
+
+					File::where('is_active', 1)
+				          ->where('id', $request->id )
+				          ->update(['url' =>$url, 'name' => $request->nama_file]);
+
+				  return redirect()->route('detail-file', ['id' => $request->id]);
+
+
+			}
+			else{
+				File::where('is_active', 1)
+								->where('id', $request->id )
+								->update('is_active', 0);
+
+				return redirect()->route('list-file');
+
+			}
 		}
 
 }

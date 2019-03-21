@@ -76,7 +76,7 @@ class FileController extends Controller
 			else{
 				File::where('is_active', 1)
 								->where('id', $request->id )
-								->update('is_active', 0);
+								->update(['is_active' => 0]);
 
 				return redirect()->route('list-file');
 

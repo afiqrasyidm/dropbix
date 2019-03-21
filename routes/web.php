@@ -25,17 +25,17 @@ Route::get('/home', function () {
 
 
 Route::group(['middleware'=>'auth'], function() {
-		Route::get('/upload', function () {
-			return view('file.upload');
-		})->name('upload');
+	Route::get('/upload', function () {
+		return view('file.upload');
+	})->name('upload');
 
-		Route::post('upload', 'FileController@create');
+	Route::post('upload', 'FileController@create');
 
-		Route::get('/list-file', 'FileController@get_list_file')->name('list-file');
+	Route::get('/list-file', 'FileController@get_list_file')->name('list-file');
 
-		Route::get('/detail-file/{id}', 'FileController@get_file')->name('detail-file');
+	Route::get('/detail-file/{id}', 'FileController@get_file')->name('detail-file');
 
-		Route::post('update', 'FileController@update')->name('update');
+	Route::post('update', 'FileController@update')->name('update');
 
 
 });
